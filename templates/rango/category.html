@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href='/rango/'>index</a>
+<div>
+    {% if category %}
+        <h1>{{ category.name }}</h1>
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+                <div>views:{{ category.views }}</div>
+                <div>likes:{{ category.likes }}</div>
+            </ul>
+        {% else %}
+            <strong>No pages currently in category</strong>
+        {% endif %}
+    {% else %}
+        The specified category does not exitst!
+    {% endif %}
+</div>
+</body>
+</html>
