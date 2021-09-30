@@ -10,25 +10,36 @@
     <title>Rango</title>
 </head>
 <body>
-<h1>Rango says...</h1>
-<div>hey there partner!</div>
-<div>
-    {% if categories %}
-        <ul>
-            {% for category in categories %}
-                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <strong>There are n categories present.</strong>
-    {% endif %}
-
-</div>
-
-<div>
-    <a href="/rango/about/">About</a>
-    {#        <img src="{% static "images/test.jpg" %}" alt="Picture of Rango"/> #}
-</div>
+    <h1>Rango says...</h1>
+    <div>hey there partner!</div>
+    <h1>Most linked Categories</h1>
+    <div>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                    <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are n pages present</strong>
+        {% endif %}
+    </div>
+    <h1>Most Viewd Pages</h1>
+    <div>
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are n pages present</strong>
+        {% endif %}
+    </div>
+    <div>
+        <a href="/rango/about/">About</a>
+        {#        <img src="{% static "images/test.jpg" %}" alt="Picture of Rango"/> #}
+    </div>
 
 </body>
 </html>
