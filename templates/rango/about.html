@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load static %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href='/rango/'>index</a>
-<h1>This tutorial has been put together by lq</h1>
-<img src="{{ MEDIA_URL }}" alt="This is a cat"/>
+{% block title_block %}
+    about
+{% endblock %}
+
+{% block body_block %}
+    <h1>This tutorial has been put together by lq</h1>
+    <img src="{{ MEDIA_URL }}" alt="This is a cat"/>
+    <img src="{% static "images/test.jpg" %}" alt="This is a cat" />
+{% endblock %}
+
+
+{#<!DOCTYPE html>#}
+{##}
+{#{% load static %}#}
+{##}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#<a href='/rango/'>index</a>#}
+{#<h1>This tutorial has been put together by lq</h1>#}
+{#<img src="{{ MEDIA_URL }}" alt="This is a cat"/>#}
 {#    <img src="{% static "images/test.jpg" %}" alt="This is a cat" />#}
-</body>
-</html>
+{#</body>#}
+{#</html>#}

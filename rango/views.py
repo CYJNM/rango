@@ -18,6 +18,8 @@ def index(request):
 
 def about(request):
     # return HttpResponse("<a href='/rango/'>index</>")
+    print(request.method)
+    print(request.user)
     return render(request, 'rango/about.html')
 
 
