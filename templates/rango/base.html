@@ -28,6 +28,7 @@
             {% if user.is_authenticated %}
                 <li><a href="{% url 'restricted' %}">Restricted</a></li>
                 <li><a href="{% url 'login_out' %}">Logout</a></li>
+                <li>你在本网站的访问次数：{{ visits }}</li>
             {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'register' %}">Register Here</a></li>
