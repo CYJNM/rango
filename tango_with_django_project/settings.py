@@ -136,3 +136,6 @@ STATICFILES_DIRS = [STATIC_DIR]
 # http://www.baidu.com
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+# Login url
+LOGIN_URL = '/rango/login/'

@@ -5,7 +5,11 @@
 {% endblock %}
 {% block body_block %}
     <h1>Rango says...</h1>
-    <div>hey there partner!</div>
+    {% if user.is_authenticated %}
+        hello {{ user.username }}
+    {% else %}
+        hey there partner!
+    {% endif %} 
     <h1>Most linked Categories</h1>
     <div>
         {% if categories %}
@@ -18,7 +22,7 @@
             <strong>There are n pages present</strong>
         {% endif %}
     </div>
-    <h1>Most Viewd Pages</h1>
+    <h1>Most Viewed Pages</h1>
     <div>
         {% if pages %}
             <ul>
