@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load rango_template_tags %}
 {% load static %}
+{% load i18n %}
 
 <html lang="en">
 <head>
@@ -27,11 +28,12 @@
         <ul>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'restricted' %}">Restricted</a></li>
-                <li><a href="{% url 'login_out' %}">Logout</a></li>
+                (<a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a> |
+        <a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a>)
                 <li>你在本网站的访问次数：{{ visits }}</li>
             {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'register' %}">Register Here</a></li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'registration_register' %}">Register Here</a></li>
             {% endif %}
                 <li><a href="{% url 'add_category' %}">Add New Category</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
